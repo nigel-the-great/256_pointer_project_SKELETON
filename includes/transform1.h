@@ -19,6 +19,13 @@
  * \return bool - 	true - transform occurred
  * 					false - either pchar is null or its not an alhabetic char
  */
-bool transform(char *pchar);
+bool transform(char *pchar){
+	if (pchar == int islower(pchar)){
+		ups = int toupper(pchar);
+		return true;
+	}
+	else
+		return false;
+}
 
 #endif /* TRANSFORM1_H_ */

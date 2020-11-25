@@ -1,11 +1,14 @@
 /*
  * memorymanager.cpp
  *
- *  Created on: Oct 31, 2020
- *      Author: keith
+ *  Created on: Nov 24, 2020
+ *      Author: Nigel
  */
 
 //TODO organize includes
+
+#include "../includes/constants.h"
+#include "../includes/memorymanager.h"
 
 /**
  * this will hold the list of structs

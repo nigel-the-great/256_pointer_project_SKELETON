@@ -8,6 +8,7 @@
 #ifndef MEMORYMANAGER_H_
 #define MEMORYMANAGER_H_
 #include "../includes/constants.h"
+#include <list>
 
 /**
  * create a linked list of  structs.
@@ -21,7 +22,22 @@
  * 		   						     You can tell if memory has already been allocated
  * 		   						     by whether list_data points to null or not.
  */
-int create_list(int total_memory);
+int create_list(int total_memory){
+	std::list<std::string> l;
+	std::list<std::string>::iterator i;
+	for (i = l.begin(); i != total_memory.end(); i++){
+		l.push_back(i);
+	}
+	if (l > 0){
+		return l;
+	}
+	if (l == 0){
+		return LIST_IS_EMPTY;
+	}
+	else{
+		return MEM_ALREADY_ALLOCATED;
+	}
+}
 
 /**
  * deallocate the list of structs, easiest way is to start at the beginning
@@ -30,7 +46,15 @@ int create_list(int total_memory);
  * \return SUCCESS if memory deallocated
  *         NO_STRUCTS_TO_DEALLOCATE if no memory allocated
  */
-int destroy_list();
+int destroy_list(){
+	l.clear();
+	if (!l=list.clear()){
+		return NO_STRUCTS_TO_DEALLOCATE;
+	}
+	else{
+		return SUCCESS;
+	}
+}
 
 /**
  * How many structs are available in list_data
